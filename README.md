@@ -6,7 +6,6 @@
 
   
   Music section (Spotify)
-  - The site includes a Music section that embeds a Spotify artist.
   - To override the default artist, create a `.env` file and set:
     
     VITE_SPOTIFY_ARTIST_URL=https://open.spotify.com/artist/YourArtistId
