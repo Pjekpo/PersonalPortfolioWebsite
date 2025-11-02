@@ -1,6 +1,6 @@
 {
       "name": "Personal Portfolio Website",
-      "homepage": "https://pjekpo.github.io/Personal-Portfolio-Website/",
+      "homepage": "https://pjekpo.github.io/PersonalPortfolioWebsite/",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -34,7 +34,6 @@
             "clsx": "*",
             "cmdk": "^1.1.1",
             "embla-carousel-react": "^8.6.0",
-            "gh-pages": "^6.3.0",
             "input-otp": "^1.4.2",
             "lucide-react": "^0.487.0",
             "motion": "*",
@@ -56,8 +55,6 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build",
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d dist"
+            "build": "vite build"
       }
 }
