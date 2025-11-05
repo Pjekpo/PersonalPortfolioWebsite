@@ -18,7 +18,7 @@ const projects = [
     description: "Marketing and services site for a Health & Social Care consultancy, built with TypeScript + React (SPA) using semantic HTML and modern CSS. Showcases C4i’s mission, About, and services including CQC support, registrations, site evaluations, audits, safeguarding, DoLS, care plans, and recruitment in a clear, accessible layout.",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1080",
     tags: ["TypeScript", "React", "HTML", "CSS"],
-    demoUrl: "#",
+    demoUrl: "https://coach4improvement.co.uk/",
     githubUrl: "https://github.com/Pjekpo/Coach4Improvement"
   },
   {
@@ -88,13 +88,13 @@ export function WebDevelopment() {
 
                 <div className="flex gap-3">
                   <a
-                    href={project.githubUrl}
+                    href={project.demoUrl && project.demoUrl !== "#" ? project.demoUrl : project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-colors text-gray-200"
                   >
                     <Github className="w-4 h-4" />
-                    Code
+                    {project.demoUrl && project.demoUrl !== "#" ? "Demo" : "Code"}
                   </a>
                 </div>
               </div>
