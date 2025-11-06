@@ -13,9 +13,9 @@
   - The default fallback points to the artist linked in the footer.
 
   
-  Resume download
-  - The "Download Resume" button serves `/PraiseEkpoCV.pdf` from the `public/` folder.
-  - Add your file at `public/PraiseEkpoCV.pdf` (exact name) so it opens/downloads correctly.
+  Resume
+  - No public download link is provided.
+  - Please message me if you’d like a copy of my CV.
 
   ## Deployment (GitHub Pages via Actions)
 

@@ -1,12 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Instagram, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 
 export function Footer() {
-  const handleDownloadResume = () => {
-    // In a real application, this would link to an actual resume file
-    alert("Resume download would start here. Please add your resume PDF link.");
-  };
 
   return (
     <footer id="contact" className="py-20 relative">
@@ -23,15 +18,9 @@ export function Footer() {
             <p className="text-gray-300 max-w-2xl mx-auto mb-8">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
-            
-            <Button
-              asChild
-              className="px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 shadow-lg shadow-purple-500/20"
-            >
-              <a href="/PraiseEkpoCV.pdf" download target="_blank" rel="noopener noreferrer">
-                Download Resume
-              </a>
-            </Button>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Want my CV? Please message me and I'll share it directly.
+            </p>
           </motion.div>
 
           <motion.div

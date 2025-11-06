@@ -1,1 +1,1 @@
-Place PraiseEkpoCV.pdf in this folder so the Download Resume button serves it from /PraiseEkpoCV.pdf.
+No resume file is included in the build. Please message me if you’d like a copy of my CV.
