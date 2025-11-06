@@ -1,17 +1,30 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import picture from "../picture.jpg";
+import { ModeToggle } from "./ModeToggle";
 
-export function Header() {
+type Mode = "portfolio" | "storefront";
+
+export function Header({
+  mode,
+  onModeChange,
+}: {
+  mode: Mode;
+  onModeChange: (m: Mode) => void;
+}) {
   return (
     <motion.header 
       id="home"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative overflow-hidden pt-20"
+      className="relative overflow-hidden pt-28 md:pt-32"
     >
       <div className="container mx-auto px-6 py-20 md:py-32">
+        {/* Centered mode toggle */}
+        <div className="flex justify-center mb-8 mt-2 md:mt-4">
+          <ModeToggle mode={mode} onChange={onModeChange} />
+        </div>
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin, Music2 } from "lucide-react";
 
 export function Footer() {
 
@@ -39,6 +39,15 @@ export function Footer() {
                 aria-label="GitHub"
               >
                 <Github className="w-6 h-6 text-gray-300" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@praiseekpo_?_r=1&_t=ZN-91BH0U3BfSI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-full border border-white/20 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
+                aria-label="TikTok"
+              >
+                <Music2 className="w-6 h-6 text-gray-300" />
               </a>
               <a
                 href="https://www.linkedin.com/in/praiseekpo/"

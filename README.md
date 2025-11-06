@@ -17,6 +17,12 @@
   - No public download link is provided.
   - Please message me if you’d like a copy of my CV.
 
+  Storefront
+  - The navbar includes a toggle between Portfolio and Storefronts.
+  - The Storefront page starts with the intro line and then shows bold affiliate cards.
+  - Edit items in `src/components/Storefront.tsx` (`items` array) with your titles, descriptions, tags, and URLs.
+  - Link in bio: point to `/#storefront` to open the storefront page directly.
+
   ## Deployment (GitHub Pages via Actions)
 
   - The repo includes a workflow at `.github/workflows/deploy.yml` that builds the app with `vite` and deploys the `dist/` folder to GitHub Pages.

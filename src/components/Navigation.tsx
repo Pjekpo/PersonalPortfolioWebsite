@@ -2,7 +2,15 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-export function Navigation() {
+type Mode = "portfolio" | "storefront";
+
+export function Navigation({
+  mode,
+  onModeChange,
+}: {
+  mode: Mode;
+  onModeChange: (m: Mode) => void;
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -47,7 +55,10 @@ export function Navigation() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("home")}
+              onClick={() => {
+                if (mode === "storefront") onModeChange("portfolio");
+                else scrollToSection("home");
+              }}
               className="text-xl tracking-tight"
             >
               Praise Ekpo
@@ -55,16 +66,20 @@ export function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-white transition-colors relative group"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
-                </button>
-              ))}
+              {mode === "portfolio" && (
+                <>
+                  {navItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-gray-300 hover:text-white transition-colors relative group"
+                    >
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </button>
+                  ))}
+                </>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -92,15 +107,50 @@ export function Navigation() {
         >
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
+              {/* Mobile Mode Switch */}
+              <div className="flex items-center justify-between gap-2 p-1 rounded-xl border border-white/20 bg-white/5">
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-left text-gray-300 hover:text-white transition-colors py-2 px-4 rounded-lg hover:bg-white/5"
+                  onClick={() => {
+                    onModeChange("portfolio");
+                    scrollToSection("home");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`flex-1 px-3 py-2 rounded-lg text-sm ${
+                    mode === "portfolio"
+                      ? "bg-white text-black"
+                      : "text-gray-300"
+                  }`}
                 >
-                  {item.name}
+                  Portfolio
                 </button>
-              ))}
+                <button
+                  onClick={() => {
+                    onModeChange("storefront");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`flex-1 px-3 py-2 rounded-lg text-sm ${
+                    mode === "storefront"
+                      ? "bg-white text-black"
+                      : "text-gray-300"
+                  }`}
+                >
+                  Storefronts
+                </button>
+              </div>
+
+              {mode === "portfolio" && (
+                <>
+                  {navItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-left text-gray-300 hover:text-white transition-colors py-2 px-4 rounded-lg hover:bg-white/5"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                </>
+              )}
             </div>
           </div>
         </motion.div>

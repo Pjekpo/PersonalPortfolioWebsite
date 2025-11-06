@@ -4,8 +4,26 @@ import { WebDevelopment } from "./components/WebDevelopment";
 import { GraphicDesign } from "./components/GraphicDesign";
 import { Music } from "./components/Music";
 import { Footer } from "./components/Footer";
+import { StorefrontPage } from "./components/StorefrontPage";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [mode, setMode] = useState<"portfolio" | "storefront">("portfolio");
+
+  useEffect(() => {
+    const hash = window.location.hash.toLowerCase();
+    if (hash.includes("storefront")) setMode("storefront");
+  }, []);
+
+  useEffect(() => {
+    if (mode === "storefront") {
+      window.location.hash = "#storefront";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.location.hash = "#home";
+    }
+  }, [mode]);
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Animated background gradient blobs */}
@@ -22,15 +40,24 @@ export default function App() {
       }}></div>
 
       {/* Navigation */}
-      <Navigation />
+      <Navigation mode={mode} onModeChange={setMode} />
 
       {/* Content */}
       <div className="relative z-10">
-        <Header />
-        <WebDevelopment />
-        <GraphicDesign />
-        <Music />
-        <Footer />
+        {mode === "portfolio" ? (
+          <>
+            <Header mode={mode} onModeChange={setMode} />
+            <WebDevelopment />
+            <GraphicDesign />
+            <Music />
+            <Footer />
+          </>
+        ) : (
+          <>
+            <StorefrontPage mode={mode} onModeChange={setMode} />
+            <Footer />
+          </>
+        )}
       </div>
     </div>
   );
