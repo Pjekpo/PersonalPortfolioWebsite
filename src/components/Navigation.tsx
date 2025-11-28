@@ -107,37 +107,6 @@ export function Navigation({
         >
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col gap-4">
-              {/* Mobile Mode Switch */}
-              <div className="flex items-center justify-between gap-2 p-1 rounded-xl border border-white/20 bg-white/5">
-                <button
-                  onClick={() => {
-                    onModeChange("portfolio");
-                    scrollToSection("home");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`flex-1 px-3 py-2 rounded-lg text-sm ${
-                    mode === "portfolio"
-                      ? "bg-white text-black"
-                      : "text-gray-300"
-                  }`}
-                >
-                  Portfolio
-                </button>
-                <button
-                  onClick={() => {
-                    onModeChange("storefront");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`flex-1 px-3 py-2 rounded-lg text-sm ${
-                    mode === "storefront"
-                      ? "bg-white text-black"
-                      : "text-gray-300"
-                  }`}
-                >
-                  Storefronts
-                </button>
-              </div>
-
               {mode === "portfolio" && (
                 <>
                   {navItems.map((item) => (

@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { ExternalLink, Star, Tag } from "lucide-react";
+import gumroadLogo from "../assets/gumroadlogo.png";
+import adobeLogo from "../assets/adobelogo.png";
 
 type StoreItem = {
   id: number;
@@ -8,24 +10,27 @@ type StoreItem = {
   tags?: string[];
   url: string;
   highlight?: boolean;
+  ctaImage?: string;
+  ctaImageAlt?: string;
 };
 
 // Edit this list with your affiliate items/links
 const items: StoreItem[] = [
   {
-    id: 2,
-    title: "Reviewed Tech",
-    description: "Tech I’ve reviewed and recommend.",
-    tags: ["tech", "affiliate"],
-    url: "#",
-    highlight: true
-  },
-  {
     id: 3,
     title: "Design Resources",
     description: "Fonts, mockups, and UI kits I recommend.",
-    tags: ["design"],
-    url: "https://praiseekpo.gumroad.com/"
+    url: "https://praiseekpo.gumroad.com/",
+    ctaImage: gumroadLogo,
+    ctaImageAlt: "Gumroad"
+  },
+  {
+    id: 4,
+    title: "Adobe Creative Cloud",
+    description: "My go-to Adobe tools for design work.",
+    url: "https://www.adobe.com/uk/creativecloud/plans.html?promoid=VBF1KGNL",
+    ctaImage: adobeLogo,
+    ctaImageAlt: "Adobe Creative Cloud"
   }
 ];
 
@@ -99,8 +104,18 @@ export function Storefront() {
 
               <div className="relative">
                 <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-black font-medium bg-gradient-to-r from-white to-gray-200 group-hover:from-gray-100 group-hover:to-white transition-colors">
-                  Shop Now
-                  <ExternalLink className="w-4 h-4" />
+                  {item.ctaImage ? (
+                    <img
+                      src={item.ctaImage}
+                      alt={item.ctaImageAlt ?? `${item.title} logo`}
+                      className="h-7 w-auto object-contain"
+                    />
+                  ) : (
+                    <>
+                      Shop Now
+                      <ExternalLink className="w-4 h-4" />
+                    </>
+                  )}
                 </div>
               </div>
             </motion.a>
