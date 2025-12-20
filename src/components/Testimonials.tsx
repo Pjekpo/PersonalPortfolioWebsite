@@ -1,0 +1,110 @@
+import { motion } from "motion/react";
+import { Star } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import naisonPhoto from "../assets/123.jpeg";
+import tinaPhoto from "../assets/tina.jpg";
+import paulPhoto from "../assets/Paul.jpg";
+
+type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+  image: string;
+  imageAlt: string;
+};
+
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Nasion",
+    role: "Founder, C4Improvement",
+    quote:
+      "Praise helped me ship a full website plus AI software implementations. Clear communication, fast iteration, and the final product exceeded expectations.",
+    rating: 5,
+    image: naisonPhoto,
+    imageAlt: "Nasion at workshop"
+  },
+  {
+    id: 2,
+    name: "Tina George",
+    role: "Product Lead, Stratos",
+    quote:
+      "Dependable partner for rapid UI/UX explorations and production-ready builds. Turned vague ideas into a cohesive experience under a tight deadline.",
+    rating: 5,
+    image: tinaPhoto,
+    imageAlt: "Tina George"
+  },
+  {
+    id: 3,
+    name: "Paul Martins",
+    role: "CTO, Northwind Labs",
+    quote:
+      "Handled frontend, backend hooks, and AI-assisted tooling end to end. Reliable, thoughtful, and proactive about edge cases.",
+    rating: 5,
+    image: paulPhoto,
+    imageAlt: "Paul portrait"
+  }
+];
+
+export function Testimonials() {
+  const cardLayouts = ["lg:col-span-2", "lg:col-span-1", "lg:col-span-2"];
+
+  return (
+    <section id="feedback" className="py-20 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-transparent blur-3xl pointer-events-none"></div>
+      <div className="container mx-auto px-6 relative">
+        <div className="text-center mb-10">
+          <h2 className="mb-3">Testimonials</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Notes from teams I've shipped with recently.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {testimonials.map((t, idx) => (
+            <motion.div
+              key={t.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className={`rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 md:p-7 shadow-lg flex flex-col gap-4 ${cardLayouts[idx] || ""}`}
+              style={{ minHeight: idx === 1 ? "240px" : "200px" }}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full overflow-hidden border border-white/15 bg-white/10">
+                    <ImageWithFallback
+                      src={t.image}
+                      alt={t.imageAlt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">{t.name}</p>
+                    <p className="text-sm text-gray-300">{t.role}</p>
+                  </div>
+                </div>
+                <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-300/40 text-emerald-100 text-xs font-medium">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 text-yellow-300"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    />
+                  ))}
+                </div>
+              </div>
+              <p className="text-lg md:text-xl text-white leading-snug flex-1">
+                {t.quote}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

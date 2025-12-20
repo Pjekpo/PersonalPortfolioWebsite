@@ -4,7 +4,7 @@ import { Github, Instagram, Linkedin, Music2 } from "lucide-react";
 export function Footer() {
 
   return (
-    <footer id="contact" className="py-20 relative">
+    <footer className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="rounded-3xl border border-white/10 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 p-12 md:p-16">
           <motion.div

@@ -34,7 +34,6 @@ export function Navigation({
     { name: "Home", id: "home" },
     { name: "Software Development", id: "web-development" },
     { name: "Graphic Design", id: "graphic-design" },
-    { name: "Music", id: "music" },
     { name: "Contact", id: "contact" }
   ];
 
@@ -83,22 +82,24 @@ export function Navigation({
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg border border-white/20 backdrop-blur-sm bg-white/5"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            {mode === "portfolio" && (
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 rounded-lg border border-white/20 backdrop-blur-sm bg-white/5"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            )}
           </div>
         </div>
       </motion.nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
+      {mode === "portfolio" && isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -52,14 +52,20 @@ export function Header({
               <p className="text-gray-300">Hi, my name is Praise Ekpo</p>
             </div>
             <h1 className="mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              Developer & Designer
+              AI Developer | Designer
             </h1>
             <p className="text-gray-300 max-w-2xl mb-6">
-              I'm a multiskilled BSc (Hons) Computer Science graduate, deeply interested in artificial intelligence and the potential it poses, I enjoy exploring the intersection between human intuition and intelligent automation, and I'm always curious about how AI can be used to solve real-world problems and inspire innovation.
+              Praise Ekpo is a BSc Computer Science graduate with a vision of building an artificial intelligence automation company specialising in intelligent software solutions. We bridge the gap between human insight and automated systems by designing AI-driven tools that solve real-world problems and create measurable impact. We are open to collaborations, partnerships, and internship opportunities. You can contact me through{" "}
+              <a
+                href="#contact"
+                className="underline text-white hover:text-gray-200 font-semibold"
+              >
+                👉 Contact Form
+              </a>
             </p>
             <p className="text-gray-300 max-w-2xl mb-8">
-              I'm also the founder of <span className="text-white">The Wol Collective</span>, my clothing brand that
-              encourages people to value the one existence they have and the people around them. You can
+              I'm also the co-founder and designer of <span className="text-white">The Wol Collective</span>, a clothing brand that
+              encourages people to value the one existence they have. You can
               check out my brand at
               {" "}
               <a
@@ -73,17 +79,6 @@ export function Header({
               .
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <span className="px-4 py-2 rounded-lg border border-white/10 backdrop-blur-sm bg-white/5 text-gray-200">
-                Software Developer
-              </span>
-              <span className="px-4 py-2 rounded-lg border border-white/10 backdrop-blur-sm bg-white/5 text-gray-200">
-                Graphic Designer
-              </span>
-              <span className="px-4 py-2 rounded-lg border border-white/10 backdrop-blur-sm bg-white/5 text-gray-200">
-                Brand Owner
-              </span>
-            </div>
           </motion.div>
 
           {/* Divider and Skills column (desktop) */}

@@ -2,9 +2,10 @@ import { Navigation } from "./components/Navigation";
 import { Header } from "./components/Header";
 import { WebDevelopment } from "./components/WebDevelopment";
 import { GraphicDesign } from "./components/GraphicDesign";
-import { Music } from "./components/Music";
 import { Footer } from "./components/Footer";
 import { StorefrontPage } from "./components/StorefrontPage";
+import { Testimonials } from "./components/Testimonials";
+import { ContactForm } from "./components/ContactForm";
 import { useEffect, useState } from "react";
 
 export default function App() {
@@ -43,13 +44,14 @@ export default function App() {
       <Navigation mode={mode} onModeChange={setMode} />
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 pt-24 md:pt-28">
         {mode === "portfolio" ? (
           <>
             <Header mode={mode} onModeChange={setMode} />
             <WebDevelopment />
             <GraphicDesign />
-            <Music />
+            <Testimonials />
+            <ContactForm />
             <Footer />
           </>
         ) : (
