@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import picture from "../picture.jpg";
+import picture from "../assets/propic.jpeg";
 import { ModeToggle } from "./ModeToggle";
 
 type Mode = "portfolio" | "storefront";
@@ -37,7 +37,8 @@ export function Header({
               <ImageWithFallback 
                 src={picture}
                 alt="Praise Ekpo"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full scale-80"
+                style={{ objectPosition: "50% 30%" }}
               />
             </div>
           </motion.div>
