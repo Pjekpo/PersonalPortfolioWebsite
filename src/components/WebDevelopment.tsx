@@ -1,16 +1,17 @@
 import { motion } from "motion/react";
 import { Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import wolCollectiveImage from "../assets/IMG_3519.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "Insta Recipe App",
-    description: "A Unity (C#) app that recommends dishes using data from Firebase. Browse recipe ideas, filter, and discover meals quickly with a lightweight, mobile-friendly experience.",
-    image: "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=1080",
-    tags: ["C#", "Unity", "Firebase"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/Pjekpo/InstaRecipe"
+    title: "WOL Collective Website",
+    description: "Brand-forward website for WOL Collective, highlighting the latest drops, lookbook visuals, and community storytelling in a bold, editorial layout.",
+    image: wolCollectiveImage,
+    tags: ["React", "TypeScript", "Tailwind"],
+    demoUrl: "https://dystopian-threads--praisejekpo.replit.app",
+    githubUrl: "#"
   },
   {
     id: 2,

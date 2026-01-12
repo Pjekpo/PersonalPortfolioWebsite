@@ -1,8 +1,6 @@
 import { motion } from "motion/react";
 import { ExternalLink, Star, Tag } from "lucide-react";
 import gumroadLogo from "../assets/gumroadlogo.png";
-import depopLogo from "../assets/depop.jpg";
-import ebayLogo from "../assets/ebay.jpeg";
 import vintedLogo from "../assets/vinted.jpg";
 
 type StoreItem = {
@@ -28,22 +26,6 @@ const items: StoreItem[] = [
   },
   {
     id: 2,
-    title: "eBay Shop",
-    description: "Tech, accessories, and collectibles I'm selling.",
-    url: "https://www.ebay.co.uk/usr/praisejekpo",
-    ctaImage: ebayLogo,
-    ctaImageAlt: "eBay"
-  },
-  {
-    id: 3,
-    title: "Depop Shop",
-    description: "Streetwear drops and unique finds.",
-    url: "https://www.depop.com/praisejekpo/",
-    ctaImage: depopLogo,
-    ctaImageAlt: "Depop"
-  },
-  {
-    id: 4,
     title: "Design Resources",
     description: "Fonts, mockups, and UI kits I recommend.",
     url: "https://praiseekpo.gumroad.com/",

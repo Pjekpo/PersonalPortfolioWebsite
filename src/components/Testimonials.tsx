@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Star } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import naisonPhoto from "../assets/123.jpeg";
-import tinaPhoto from "../assets/tina.jpg";
+import wolLogo from "../assets/logo.png";
 import paulPhoto from "../assets/Paul.jpg";
 
 type Testimonial = {
@@ -28,13 +28,13 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Tina George",
-    role: "Product Lead, Stratos",
+    name: "WOL Collective",
+    role: "Apparel & Culture Brand",
     quote:
-      "Dependable partner for rapid UI/UX explorations and production-ready builds. Turned vague ideas into a cohesive experience under a tight deadline.",
+      "Captured the brand energy with a clean, punchy build. The visuals land hard, the flow feels premium, and the site tells our story exactly how we wanted.",
     rating: 5,
-    image: tinaPhoto,
-    imageAlt: "Tina George"
+    image: wolLogo,
+    imageAlt: "WOL Collective logo"
   },
   {
     id: 3,
