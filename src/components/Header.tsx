@@ -1,19 +1,10 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import picture from "../assets/propic.jpeg";
-import { ModeToggle } from "./ModeToggle";
 
-type Mode = "portfolio" | "storefront";
-
-export function Header({
-  mode,
-  onModeChange,
-}: {
-  mode: Mode;
-  onModeChange: (m: Mode) => void;
-}) {
+export function Header() {
   return (
-    <motion.header 
+    <motion.header
       id="home"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -21,10 +12,6 @@ export function Header({
       className="relative overflow-hidden pt-28 md:pt-32"
     >
       <div className="container mx-auto px-6 py-20 md:py-32">
-        {/* Centered mode toggle */}
-        <div className="flex justify-center mb-8 mt-2 md:mt-4">
-          <ModeToggle mode={mode} onChange={onModeChange} />
-        </div>
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -34,7 +21,7 @@ export function Header({
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 blur-3xl rounded-full"></div>
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-white/20 backdrop-blur-sm bg-white/5 p-2">
-              <ImageWithFallback 
+              <ImageWithFallback
                 src={picture}
                 alt="Praise Ekpo"
                 className="w-full h-full object-cover rounded-full scale-80"
@@ -42,7 +29,7 @@ export function Header({
               />
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -53,33 +40,23 @@ export function Header({
               <p className="text-gray-300">Hi, my name is Praise Ekpo</p>
             </div>
             <h1 className="mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              AI Developer | Designer
+              Software Developer & Designer
             </h1>
-            <p className="text-gray-300 max-w-2xl mb-6">
-              Praise Ekpo is a BSc Computer Science graduate with a vision of building an artificial intelligence automation company specialising in intelligent software solutions. We bridge the gap between human insight and automated systems by designing AI-driven tools that solve real-world problems and create measurable impact. We are open to collaborations, partnerships, and internship opportunities. You can contact me through{" "}
-              <a
-                href="#contact"
-                className="underline text-white hover:text-gray-200 font-semibold"
-              >
-                👉 Contact Form
-              </a>
+            <p className="text-gray-300 max-w-2xl mb-4">
+              BSc Computer Science graduate building AI automation, production-ready web applications, and software that solve real business problems.
             </p>
-            <p className="text-gray-300 max-w-2xl mb-8">
-              I'm also the co-founder and designer of <span className="text-white">The Wol Collective</span>, a clothing brand that
-              encourages people to value the one existence they have. You can
-              check out my brand at
-              {" "}
-              <a
-                href="https://thewolcollective.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-white hover:text-gray-200"
-              >
-                thewolcollective.com
-              </a>
-              .
+            <p className="text-gray-300 max-w-2xl mb-4">
+              I work across the full stack with a strong focus on clean UI, fast iteration, and pragmatic engineering, using tools like Python, TypeScript, React, Node.js, Git, and CI/CD workflows to ship reliably. Available for <span className="text-white font-semibold">internships, junior roles, and freelance contracts</span>.
             </p>
-
+            <p className="text-gray-400 max-w-2xl mb-8 text-sm">
+              Alongside my technical work, I co-founded <a href="https://thewolcollective.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200 underline">The WOL Collective</a>, where I lead the brand, website, and creative direction, and I also launched Ekpo AI Solutions to help local businesses adopt practical AI workflows - generating over £1,000 in revenue in its first month.
+            </p>
+            <a
+              href="#contact"
+              className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg hover:shadow-purple-500/30 hover:translate-y-[-1px] transition-all duration-300"
+            >
+              Get in Touch
+            </a>
           </motion.div>
 
           {/* Divider and Skills column (desktop) */}
@@ -92,25 +69,25 @@ export function Header({
               className="min-w-[280px] max-w-sm"
             >
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-[0_0_60px_rgba(255,255,255,0.05)]">
-                <p className="text-sm text-gray-300 mb-3">Skills</p>
+                <p className="text-sm text-gray-300 mb-3">Core Skills</p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
+                    "AI Automation",
                     "TypeScript",
                     "React",
-                    "Vite",
-                    "Tailwind CSS",
                     "Node.js",
-                    "Adobe Illustrator",
-                    "Adobe Photoshop",
+                    "Python",
+                    "Tailwind CSS",
+                    "Vite",
+                    "REST APIs",
                     "Three.js",
                     "Figma",
+                    "Git",
+                    "HTML / CSS",
                   ].map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-gray-200"
+                      className="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-gray-200 text-sm"
                     >
                       {skill}
                     </span>

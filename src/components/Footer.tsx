@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
-import { Github, Instagram, Linkedin, Music2 } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
+  const email = "praiseekpo2@gmail.com";
 
   return (
-    <footer className="py-20 relative">
+    <footer id="contact" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="rounded-3xl border border-white/10 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 p-12 md:p-16">
           <motion.div
@@ -18,9 +19,16 @@ export function Footer() {
             <p className="text-gray-300 max-w-2xl mx-auto mb-8">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto mb-6">
               Want my CV? Please message me and I'll share it directly.
             </p>
+            <a
+              href={`mailto:${email}`}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-200 transition-colors hover:border-white/20 hover:text-white"
+            >
+              <Mail className="w-4 h-4" />
+              {email}
+            </a>
           </motion.div>
 
           <motion.div
@@ -41,15 +49,6 @@ export function Footer() {
                 <Github className="w-6 h-6 text-gray-300" />
               </a>
               <a
-                href="https://www.tiktok.com/@praiseekpo_?_r=1&_t=ZN-91BH0U3BfSI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-full border border-white/20 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
-                aria-label="TikTok"
-              >
-                <Music2 className="w-6 h-6 text-gray-300" />
-              </a>
-              <a
                 href="https://www.linkedin.com/in/praiseekpo/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,15 +56,6 @@ export function Footer() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6 text-gray-300" />
-              </a>
-              <a
-                href="https://www.instagram.com/rayi3_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-full border border-white/20 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6 text-gray-300" />
               </a>
             </div>
 

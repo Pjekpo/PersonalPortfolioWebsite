@@ -10,7 +10,7 @@ const projects = [
     description: "Brand-forward website for WOL Collective, highlighting the latest drops, lookbook visuals, and community storytelling in a bold, editorial layout.",
     image: wolCollectiveImage,
     tags: ["React", "TypeScript", "Tailwind"],
-    demoUrl: "https://dystopian-threads--praisejekpo.replit.app",
+    demoUrl: "https://www.thewolcollective.com/",
     githubUrl: "#"
   },
   {
@@ -24,12 +24,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "3D AI Chat Buddy (Android)",
-    description: "3D AI chat companion for Android built with C# (Unity). Uses Convai AI for the 3D character’s conversational intelligence and ShaderLab for custom materials and visual effects.",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1080",
-    tags: ["Android", "3D", "C#", "Convai", "ShaderLab"],
+    title: "Trading 212 AI Chatbot",
+    description: "AI-powered chatbot built for Trading 212, capable of answering platform-specific questions using retrieval-augmented generation. Designed to reduce support load with accurate, context-aware responses.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1080",
+    tags: ["Python", "AI", "RAG", "NLP"],
     demoUrl: "#",
-    githubUrl: "https://github.com/Pjekpo/Chatbuddies-V2"
+    githubUrl: "https://github.com/Pjekpo/Trading212-Chatbot"
   }
 ];
 

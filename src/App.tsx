@@ -3,28 +3,9 @@ import { Header } from "./components/Header";
 import { WebDevelopment } from "./components/WebDevelopment";
 import { GraphicDesign } from "./components/GraphicDesign";
 import { Footer } from "./components/Footer";
-import { StorefrontPage } from "./components/StorefrontPage";
 import { Testimonials } from "./components/Testimonials";
-import { ContactForm } from "./components/ContactForm";
-import { useEffect, useState } from "react";
 
 export default function App() {
-  const [mode, setMode] = useState<"portfolio" | "storefront">("portfolio");
-
-  useEffect(() => {
-    const hash = window.location.hash.toLowerCase();
-    if (hash.includes("storefront")) setMode("storefront");
-  }, []);
-
-  useEffect(() => {
-    if (mode === "storefront") {
-      window.location.hash = "#storefront";
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.location.hash = "#home";
-    }
-  }, [mode]);
-
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Animated background gradient blobs */}
@@ -41,25 +22,15 @@ export default function App() {
       }}></div>
 
       {/* Navigation */}
-      <Navigation mode={mode} onModeChange={setMode} />
+      <Navigation />
 
       {/* Content */}
       <div className="relative z-10 pt-24 md:pt-28">
-        {mode === "portfolio" ? (
-          <>
-            <Header mode={mode} onModeChange={setMode} />
-            <WebDevelopment />
-            <GraphicDesign />
-            <Testimonials />
-            <ContactForm />
-            <Footer />
-          </>
-        ) : (
-          <>
-            <StorefrontPage mode={mode} onModeChange={setMode} />
-            <Footer />
-          </>
-        )}
+        <Header />
+        <WebDevelopment />
+        <GraphicDesign />
+        <Testimonials />
+        <Footer />
       </div>
     </div>
   );
