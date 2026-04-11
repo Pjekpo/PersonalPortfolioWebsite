@@ -24,12 +24,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "Trading 212 AI Chatbot",
-    description: "AI-powered chatbot built for Trading 212, capable of answering platform-specific questions using retrieval-augmented generation. Designed to reduce support load with accurate, context-aware responses.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1080",
-    tags: ["Python", "AI", "RAG", "NLP"],
+    title: "Lead Generation Tool",
+    description: "Lead generation web app that scrapes and qualifies business leads from Google Maps and Facebook via Apify actors, then normalizes, deduplicates, and scores them in the browser.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1080",
+    tags: ["Node.js", "Express", "Apify", "Lead Scoring"],
     demoUrl: "#",
-    githubUrl: "https://github.com/Pjekpo/Trading212-Chatbot"
+    githubUrl: "https://github.com/Pjekpo/lead-generation-tool"
   }
 ];
 
