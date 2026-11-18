@@ -1,4 +1,4 @@
-// Graphic design work. Images are optimised copies in src/assets/optimised/ (originals are kept untouched
+// Graphic design work. Images are optimised copies in src/assets/optimised/ (wol/ and fun/) (originals are kept untouched
 // in src/assets/branding and src/assets/FreelancePersonalProjects; `source` points at each original).
 // To regenerate the copies, resize the originals to webp with the same file names.
 
@@ -8,7 +8,7 @@ const wolUrls = import.meta.glob("../assets/optimised/wol/*.webp", {
   import: "default",
 }) as Record<string, string>;
 
-const decorUrls = import.meta.glob("../assets/optimised/decor/*.webp", {
+const funUrls = import.meta.glob("../assets/optimised/fun/*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -25,13 +25,13 @@ export interface WolDesign {
   dark?: boolean;
 }
 
-export interface DecorItem {
+export interface OtherDesign {
   slug: string;
   source: string;
+  title: string;
+  alt: string;
   width: number;
   height: number;
-  /** "sticker" = transparent cut-out, "photo" = rectangular print taped down */
-  kind: "sticker" | "photo";
 }
 
 /** The WOL Collective gallery, in display order. */
@@ -167,140 +167,158 @@ export const WOL_DESIGNS: WolDesign[] = [
   }
 ];
 
-/** Everything else: used as small decorative stickers and prints around the notebook. */
-export const DECOR_ITEMS: DecorItem[] = [
+/** Other design work (freelance and personal), shown in the "fun fact" pop-up gallery. */
+export const OTHER_DESIGNS: OtherDesign[] = [
   {
     "slug": "artboard-1-1",
     "source": "FreelancePersonalProjects/Freelance/Artboard 1 (1).png",
-    "width": 300,
-    "height": 169,
-    "kind": "photo"
+    "title": "Union flag photo collage",
+    "alt": "Green-toned photo collage set behind a Union flag pattern",
+    "width": 900,
+    "height": 506
   },
   {
     "slug": "artboard-1",
     "source": "FreelancePersonalProjects/Freelance/Artboard 1.png",
-    "width": 240,
-    "height": 300,
-    "kind": "photo"
+    "title": "3-Minute Business Competition poster",
+    "alt": "Poster for a UCLan Entrepreneurial Society 3-minute business pitch competition",
+    "width": 720,
+    "height": 900
   },
   {
     "slug": "codev",
     "source": "FreelancePersonalProjects/Freelance/Codev.png",
-    "width": 300,
-    "height": 300,
-    "kind": "photo"
+    "title": "Code Vestimantaire logo",
+    "alt": "Code Vestimantaire logo with a crowned CV monogram on navy",
+    "width": 600,
+    "height": 600
   },
   {
     "slug": "penguin1",
     "source": "FreelancePersonalProjects/Freelance/PENGUIN1.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Festive penguin mascot",
+    "alt": "Cartoon penguin mascot wearing a Santa hat",
+    "width": 900,
+    "height": 900
   },
   {
     "slug": "quan-logo2",
     "source": "FreelancePersonalProjects/Freelance/Quan_Logo2.png",
-    "width": 300,
-    "height": 238,
-    "kind": "sticker"
+    "title": "DJ Quan logo",
+    "alt": "DJ Quan logo with headphones and a crown",
+    "width": 900,
+    "height": 714
   },
   {
     "slug": "quizgologo",
     "source": "FreelancePersonalProjects/Freelance/QuizGologo.jpg",
-    "width": 300,
-    "height": 228,
-    "kind": "sticker"
+    "title": "Quiz-Go logo",
+    "alt": "Quiz-Go logo in yellow lettering over a cartoon globe",
+    "width": 900,
+    "height": 683
   },
   {
     "slug": "codevglobe",
     "source": "FreelancePersonalProjects/Freelance/codevglobe.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Code Vestimantaire globe mark",
+    "alt": "Hand-drawn globe with Code Vestimantaire lettering",
+    "width": 600,
+    "height": 600
   },
   {
     "slug": "penguin2",
     "source": "FreelancePersonalProjects/Freelance/penguin2.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Penguin mascot",
+    "alt": "Smiling cartoon penguin mascot waving",
+    "width": 900,
+    "height": 900
   },
   {
     "slug": "img-6909",
     "source": "FreelancePersonalProjects/Personal/IMG_6909.gif",
-    "width": 300,
-    "height": 256,
-    "kind": "photo"
+    "title": "Animated photo edit",
+    "alt": "Animated edit of a person sitting on a wall in front of flowers",
+    "width": 560,
+    "height": 478
   },
   {
     "slug": "praisevstheworldfinished",
     "source": "FreelancePersonalProjects/Personal/Praisevstheworldfinished.png",
-    "width": 300,
-    "height": 300,
-    "kind": "photo"
+    "title": "\"Praise vs the world\" illustration",
+    "alt": "Illustrated portrait set against a starry space background",
+    "width": 900,
+    "height": 900
   },
   {
     "slug": "bigben",
     "source": "FreelancePersonalProjects/Personal/bigben.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Big Ben illustration",
+    "alt": "Flat illustration of Big Ben",
+    "width": 500,
+    "height": 500
   },
   {
     "slug": "goblin",
     "source": "FreelancePersonalProjects/Personal/goblin.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Goblin character",
+    "alt": "Green cartoon goblin face",
+    "width": 900,
+    "height": 900
   },
   {
     "slug": "img1",
     "source": "FreelancePersonalProjects/Personal/img1.png",
-    "width": 300,
-    "height": 300,
-    "kind": "photo"
+    "title": "\"Don't blend in\" poster",
+    "alt": "Street photo poster with the words \"Don't blend in\"",
+    "width": 900,
+    "height": 900
   },
   {
     "slug": "img2",
     "source": "FreelancePersonalProjects/Personal/img2.png",
-    "width": 300,
-    "height": 298,
-    "kind": "photo"
+    "title": "\"Don't be afraid\" poster",
+    "alt": "Street photo poster with the words \"Don't be afraid\"",
+    "width": 900,
+    "height": 894
   },
   {
     "slug": "merlion",
     "source": "FreelancePersonalProjects/Personal/merlion.png",
-    "width": 212,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Merlion illustration",
+    "alt": "Small line illustration of the Merlion",
+    "width": 596,
+    "height": 842
   },
   {
     "slug": "moon",
     "source": "FreelancePersonalProjects/Personal/moon.png",
-    "width": 252,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Moon illustration",
+    "alt": "Cartoon illustration of the moon",
+    "width": 500,
+    "height": 596
   },
   {
     "slug": "pizza",
     "source": "FreelancePersonalProjects/Personal/pizza.png",
-    "width": 300,
-    "height": 300,
-    "kind": "sticker"
+    "title": "Leaning Tower of Pisa illustration",
+    "alt": "Flat illustration of the Leaning Tower of Pisa",
+    "width": 500,
+    "height": 500
   },
   {
     "slug": "wii-edit",
     "source": "FreelancePersonalProjects/Personal/wii edit.png",
-    "width": 225,
-    "height": 300,
-    "kind": "photo"
+    "title": "Wii remote photo edit",
+    "alt": "Photo edit of a person leaping by a marina with a Wii remote and game menu overlay",
+    "width": 675,
+    "height": 900
   }
 ];
 
 export const wolThumb = (slug: string) => wolUrls[`../assets/optimised/wol/${slug}-thumb.webp`];
 export const wolFull = (slug: string) => wolUrls[`../assets/optimised/wol/${slug}-full.webp`];
-export const decorUrl = (slug: string) => decorUrls[`../assets/optimised/decor/${slug}.webp`];
+export const otherDesignUrl = (slug: string) => funUrls[`../assets/optimised/fun/${slug}.webp`];
 /** Still first frames for animated images (used when the visitor prefers reduced motion). */
 export const wolThumbStatic = (slug: string) => wolUrls[`../assets/optimised/wol/${slug}-thumb-static.webp`];
 export const wolFullStatic = (slug: string) => wolUrls[`../assets/optimised/wol/${slug}-full-static.webp`];
-export const decorStaticUrl = (slug: string) => decorUrls[`../assets/optimised/decor/${slug}-static.webp`];
+export const otherDesignStaticUrl = (slug: string) => funUrls[`../assets/optimised/fun/${slug}-static.webp`];

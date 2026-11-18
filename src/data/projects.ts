@@ -413,24 +413,23 @@ export const PROJECTS: Project[] = [
   {
     "slug": "portfolio",
     "title": "Personal Portfolio Website",
-    "period": "Oct 2025 to Apr 2026, live",
+    "period": "Oct 2025 to present, live",
     "kind": "own",
-    "summary": "One-page portfolio with my bio, skills, web development projects, graphic design work, client testimonials and contact links, in a black glassmorphism style.",
+    "summary": "My personal portfolio, redesigned in November 2026 with a dark, grid-based tech look, showing every project with screenshots, code snapshots and demo videos, plus my clients and design work.",
     "features": [
-      "Animated sections",
-      "project cards for WOL Collective, Coach4Improvement and the lead generation tool",
-      "client testimonials",
-      "automatic build and deploy on every push."
+      "Every project with its interface screenshot, code snapshot and a demo video slot",
+      "Client section with testimonials and the work I did for each client",
+      "WOL Collective design gallery and a fun-fact pop-up of my other graphic design work",
+      "Accessible: keyboard navigation, focus states and reduced-motion support",
+      "Automatic build and deploy to GitHub Pages on every push"
     ],
     "howIUseIt": "As the link in my bio and on applications to show my work to employers and clients.",
     "tech": [
       "React 18",
       "TypeScript",
       "Vite",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Radix UI",
-      "Motion",
+      "CSS",
+      "IBM Plex fonts via Fontsource",
       "GitHub Actions",
       "GitHub Pages"
     ],
@@ -451,17 +450,17 @@ export const PROJECTS: Project[] = [
         "kind": "tool",
         "file": "portfolio-tool.jpg",
         "title": "Portfolio: home",
-        "description": "Home section of my portfolio website.",
-        "width": 1400,
-        "height": 875
+        "description": "Hero section of the redesigned portfolio, with my profile card and skills.",
+        "width": 1600,
+        "height": 1000
       },
       {
         "kind": "code",
         "file": "portfolio-code.jpg",
-        "title": "Portfolio: projects section",
-        "description": "React/TypeScript component for the web development projects section, animated with Motion.",
+        "title": "Portfolio: project entry component",
+        "description": "React/TypeScript component that renders each project entry with its screenshots and demo video slot.",
         "width": 1400,
-        "height": 1328
+        "height": 1525
       }
     ]
   },
@@ -470,7 +469,7 @@ export const PROJECTS: Project[] = [
     "title": "CV and Cover Letter Drafter: Claude AI Plugin",
     "period": "2026",
     "kind": "own",
-    "summary": "My own Claude plugin that reads my CV template and this master experience document, analyses a job description and drafts a tailored CV and cover letter.",
+    "summary": "My own Claude plugin that reads my CV template and my master experience document, analyses a job description and drafts a tailored CV and cover letter.",
     "features": [
       "draft-cv and draft-cover-letter commands",
       "update-experience command to log new work",
@@ -612,7 +611,7 @@ export const PROJECTS: Project[] = [
       "downloads all 85 photos and converts them from WebP to JPG",
       "builds a Word summary and a photo folder per listing",
       "fills Depop's bulk-listing template as an upload-ready CSV",
-      "created eBay listing drafts",
+      "eBay listing drafts",
       "relist page with copy buttons, search and CSV export."
     ],
     "howIUseIt": "To relist my 22 Vinted items on Depop and eBay without retyping every listing.",
@@ -706,7 +705,7 @@ export const PROJECTS: Project[] = [
     "kind": "own",
     "summary": "Compares the accounts I follow with the accounts that follow me to show who does not follow back, and tracks follower and following changes over time.",
     "features": [
-      "Parsed and de-duplicated usernames from Instagram's HTML exports and calculated set differences",
+      "Parses and de-duplicates usernames from Instagram's HTML exports and calculates set differences",
       "now stores follow snapshots in a database through Achieve Praise."
     ],
     "howIUseIt": "To manage my Instagram accounts (praisejekpo and akadaa.k) as I grow my tech and AI content.",
@@ -744,7 +743,7 @@ export const PROJECTS: Project[] = [
     "title": "Prospects Tracker",
     "period": "Jun 2026",
     "kind": "own",
-    "summary": "Interactive table for tracking sales prospects through three pipeline stages (PIQUE, STP, 3WC) with notes.",
+    "summary": "Interactive table for tracking sales prospects through three direct-sales pipeline stages (PIQUE, STP and 3WC) with notes.",
     "features": [
       "Inline-editable names and notes",
       "checkbox stage tracking",
