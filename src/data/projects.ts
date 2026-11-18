@@ -525,7 +525,6 @@ export const PROJECTS: Project[] = [
       "HTML",
       "CSS",
       "JavaScript",
-      "Claude (AI-assisted build and scheduled tasks)",
       "Google Calendar and Gmail integrations"
     ],
     "links": [
@@ -572,7 +571,6 @@ export const PROJECTS: Project[] = [
       "CSS",
       "JavaScript",
       "localStorage",
-      "Claude (AI-assisted build)",
       "Indeed search"
     ],
     "links": [
@@ -625,8 +623,7 @@ export const PROJECTS: Project[] = [
       "HTML",
       "CSS",
       "JavaScript",
-      "Clipboard API",
-      "Claude (AI-assisted build)"
+      "Clipboard API"
     ],
     "links": [
       {
@@ -670,8 +667,7 @@ export const PROJECTS: Project[] = [
       "HTML",
       "CSS (masonry layout)",
       "JavaScript",
-      "responsive images",
-      "Claude (AI-assisted build)"
+      "responsive images"
     ],
     "links": [
       {
@@ -754,8 +750,7 @@ export const PROJECTS: Project[] = [
     "tech": [
       "HTML",
       "CSS",
-      "JavaScript",
-      "Claude (AI-assisted build)"
+      "JavaScript"
     ],
     "links": [
       {
